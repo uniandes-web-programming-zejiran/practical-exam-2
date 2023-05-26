@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = () => {
         const credentials = {
@@ -22,7 +24,8 @@ const LoginForm = () => {
                 if (response.status === 200) {
                     // Successful authentication
                     console.log('Authentication successful');
-                    // Redirect to the list of cafes or perform any other actions
+                    // Redirect to the list of cafes
+                    navigate("/coffees");
                 } else if (response.status === 401) {
                     // Incorrect credentials
                     setError('Please review your credentials');
