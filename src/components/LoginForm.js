@@ -25,7 +25,7 @@ const LoginForm = () => {
                     // Successful authentication
                     console.log('Authentication successful');
                     // Redirect to the list of cafes
-                    navigate("/coffees");
+                    navigate("/cafes");
                 } else if (response.status === 401) {
                     // Incorrect credentials
                     setError('Please review your credentials');
