@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import CoffeeDetail from './CoffeeDetail';
 
 const CafeList = () => {
     const [cafes, setCafes] = useState([]);
+    const [selectedCoffee, setSelectedCoffee] = useState(null);
 
     useEffect(() => {
         fetch('http://localhost:3001/cafes')
@@ -9,6 +11,10 @@ const CafeList = () => {
             .then(data => setCafes(data))
             .catch(error => console.error(error));
     }, []);
+
+    const handleCoffeeSelect = (coffee) => {
+        setSelectedCoffee(coffee);
+    };
 
     return (
         <div className="container">
@@ -24,7 +30,7 @@ const CafeList = () => {
                 </thead>
                 <tbody>
                     {cafes.map((cafe) => (
-                        <tr key={cafe.id}>
+                        <tr key={cafe.id} onClick={() => handleCoffeeSelect(cafe)}>
                             <td style={{ fontWeight: "bold" }}>{cafe.id}</td>
                             <td>{cafe.nombre}</td>
                             <td>{cafe.tipo}</td>
@@ -33,6 +39,7 @@ const CafeList = () => {
                     ))}
                 </tbody>
             </table>
+            {selectedCoffee && <CoffeeDetail coffee={selectedCoffee} />}
         </div>
     );
 };
