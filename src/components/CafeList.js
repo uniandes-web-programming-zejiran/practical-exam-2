@@ -12,8 +12,8 @@ const CafeList = () => {
             .catch(error => console.error(error));
     }, []);
 
-    const handleCoffeeSelect = (coffee) => {
-        setSelectedCoffee(coffee);
+    const handleCoffeeSelect = (coffeeId) => {
+        setSelectedCoffee(coffeeId);
     };
 
     return (
@@ -30,8 +30,8 @@ const CafeList = () => {
                 </thead>
                 <tbody>
                     {cafes.map((cafe) => (
-                        <tr key={cafe.id} onClick={() => handleCoffeeSelect(cafe)}>
-                            <td style={{ fontWeight: "bold" }}>{cafe.id}</td>
+                        <tr key={cafe.id} onClick={() => handleCoffeeSelect(cafe.id)}>
+                            <td>{cafe.id}</td>
                             <td>{cafe.nombre}</td>
                             <td>{cafe.tipo}</td>
                             <td>{cafe.region}</td>
@@ -39,7 +39,7 @@ const CafeList = () => {
                     ))}
                 </tbody>
             </table>
-            {selectedCoffee && <CoffeeDetail coffee={selectedCoffee} />}
+            {selectedCoffee && <CoffeeDetail coffeeId={selectedCoffee} />}
         </div>
     );
 };
