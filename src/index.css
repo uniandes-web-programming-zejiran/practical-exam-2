@@ -36,3 +36,8 @@ code {
 .bold-text {
   font-weight: bold;
 }
+
+tr:hover {
+  background-color: rgb(215, 215, 215);
+  cursor: pointer;
+}
