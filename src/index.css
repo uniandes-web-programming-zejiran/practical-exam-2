@@ -51,16 +51,15 @@ thead {
 .coffee-container {
   display: flex;
   width: 100%;
-  max-width: 900px;
 }
 
 .coffee-list {
-  flex: 0 0 90%;
+  flex: 0 0 70%;
   padding-right: 20px;
 }
 
 .coffee-detail {
-  flex: 0 0 40%;
+  flex: 0 0 30%;
   padding-left: 30px;
 }
 
