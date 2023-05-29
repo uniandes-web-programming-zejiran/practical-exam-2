@@ -23,15 +23,14 @@ const CoffeeDetail = ({ coffeeId }) => {
 
     return (
         <div className="container">
-            <h2 className="mt-4"><FormattedMessage id="CafeDetail" /></h2>
             <div className="card">
-                <img src={coffee.imagen} className="card-img-top" alt={coffee.nombre} style={{ width: '200px' }} />
                 <div className="card-body">
                     <h5 className="card-title">{coffee.nombre}</h5>
+                    <p id="crop-date">{coffee.fecha_cultivo}</p>
+                    <img src={coffee.imagen} className="card-img-top" alt={coffee.nombre} style={{ width: '200px' }} /><br /><br />
                     <p className="card-text">
-                        <strong><FormattedMessage id="CropDate" />:</strong> {coffee.fecha_cultivo}<br />
-                        <strong><FormattedMessage id="Notes" />:</strong> {coffee.notas}<br />
-                        <strong><FormattedMessage id="CropHeight" />:</strong> {coffee.altura} <FormattedMessage id="Meters" />
+                        <FormattedMessage id="Notes" /><br />{coffee.notas}<br /><br />
+                        <strong><FormattedMessage id="CropHeight" /><br /> {coffee.altura} <FormattedMessage id="Meters" /></strong>
                     </p>
                 </div>
             </div>

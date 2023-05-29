@@ -70,19 +70,23 @@ const LoginForm = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <div className="mt-4" style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch' }}>
-                    <button
-                        style={{ backgroundColor: '#8FA98F', fontWeight: 'bold', marginBottom: '10px' }}
-                        onClick={handleLogin}
-                    >
-                        <FormattedMessage id="Enter" />
-                    </button>
-                    <button
-                        style={{ backgroundColor: '#E75D5D', fontWeight: 'bold' }}
-                        onClick={handleCancel}
-                    >
-                        <FormattedMessage id="Cancel" />
-                    </button>
+                <div className="row mt-4">
+                    <div className="col-md-6">
+                        <button
+                            style={{ backgroundColor: '#8FA98F' }}
+                            onClick={handleLogin}
+                        >
+                            <FormattedMessage id="Enter" />
+                        </button>
+                    </div>
+                    <div className="col-md-6">
+                        <button
+                            style={{ backgroundColor: '#E75D5D' }}
+                            onClick={handleCancel}
+                        >
+                            <FormattedMessage id="Cancel" />
+                        </button>
+                    </div>
                 </div>
                 {error && <p className="mt-3 text-danger">Authentication error. {error}</p>}
             </div>
