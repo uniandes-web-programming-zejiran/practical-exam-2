@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CoffeeDetail from './CoffeeDetail';
+import { FormattedMessage } from 'react-intl';
 
 const CafeList = () => {
     const [cafes, setCafes] = useState([]);
@@ -18,14 +19,14 @@ const CafeList = () => {
 
     return (
         <div className="container">
-            <h2 className="mt-4">Listado de cafés</h2>
+            <h2 className="mt-4"><FormattedMessage id="CafeList" /></h2>
             <table className="table">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nombre</th>
-                        <th>Tipo</th>
-                        <th>Región</th>
+                        <th><FormattedMessage id="Name" /></th>
+                        <th><FormattedMessage id="Type" /></th>
+                        <th><FormattedMessage id="Region" /></th>
                     </tr>
                 </thead>
                 <tbody>

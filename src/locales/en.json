@@ -1,0 +1,19 @@
+{
+    "CafeList": "Coffee List",
+    "Name": "Name",
+    "Type": "Type",
+    "Region": "Region",
+    "CafeDetail": "Coffee Detail",
+    "CropDate": "Crop Date",
+    "Notes": "Notes",
+    "CropHeight": "Crop Height",
+    "Meters": "meters",
+    "LoadingCoffeDetails": "Loading coffee details...",
+    "ContactUs": "Contact us",
+    "TheMagicalScent": "The Magical Scent",
+    "Login": "Login",
+    "Username": "Username",
+    "Password": "Password",
+    "Enter": "Enter",
+    "Cancel": "Cancel"
+}

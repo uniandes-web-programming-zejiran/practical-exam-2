@@ -1,0 +1,19 @@
+{
+    "CafeList": "Listado de cafés",
+    "Name": "Nombre",
+    "Type": "Tipo",
+    "Region": "Región",
+    "CafeDetail": "Detalle del café",
+    "CropDate": "Fecha de cultivo",
+    "Notes": "Notas",
+    "CropHeight": "Altura del cultivo",
+    "Meters": "metros",
+    "LoadingCoffeDetails": "Cargando detalles del café...",
+    "ContactUs": "Contáctenos",
+    "TheMagicalScent": "El aroma mágico",
+    "Login": "Inicio de sesión",
+    "Username": "Nombre de usuario",
+    "Password": "Contraseña",
+    "Enter": "Ingresar",
+    "Cancel": "Cancelar"
+}

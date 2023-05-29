@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { FormattedMessage } from 'react-intl';
 
 const LoginForm = () => {
     const [username, setUsername] = useState('');
@@ -42,29 +43,29 @@ const LoginForm = () => {
     };
 
     const handleCancel = () => {
-        // Handle cancel action
+        window.location.reload();
     };
 
     return (
         <div className="login-container">
-            <p className="mt-4 bold-text">Inicio de sesión</p>
+            <p className="mt-4 bold-text"><FormattedMessage id="Login" /></p>
             <div className="inner-login-container">
                 <div className="form-group">
-                    <p className="bold-text">Nombre de usuario</p>
+                    <p className="bold-text"><FormattedMessage id="Username" /></p>
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="Nombre de usuario"
+                        placeholder="Username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </div>
-                <p className="bold-text mt-4">Contraseña</p>
+                <p className="bold-text mt-4"><FormattedMessage id="Password" /></p>
                 <div className="form-group">
                     <input
                         type="password"
                         className="form-control"
-                        placeholder="Contraseña"
+                        placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
@@ -74,13 +75,13 @@ const LoginForm = () => {
                         style={{ backgroundColor: '#8FA98F', fontWeight: 'bold', marginBottom: '10px' }}
                         onClick={handleLogin}
                     >
-                        Ingresar
+                        <FormattedMessage id="Enter" />
                     </button>
                     <button
                         style={{ backgroundColor: '#E75D5D', fontWeight: 'bold' }}
                         onClick={handleCancel}
                     >
-                        Cancelar
+                        <FormattedMessage id="Cancel" />
                     </button>
                 </div>
                 {error && <p className="mt-3 text-danger">Authentication error. {error}</p>}

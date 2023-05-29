@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 const CoffeeDetail = ({ coffeeId }) => {
     const [coffee, setCoffee] = useState(null);
@@ -17,20 +18,20 @@ const CoffeeDetail = ({ coffeeId }) => {
     }, [coffeeId]);
 
     if (!coffee) {
-        return <p>Loading coffee details...</p>;
+        return <p><FormattedMessage id="LoadingCoffeeDetails" /></p>;
     }
 
     return (
         <div className="container">
-            <h2 className="mt-4">Detalle del café</h2>
+            <h2 className="mt-4"><FormattedMessage id="CafeDetail" /></h2>
             <div className="card">
                 <img src={coffee.imagen} className="card-img-top" alt={coffee.nombre} style={{ width: '200px' }} />
                 <div className="card-body">
                     <h5 className="card-title">{coffee.nombre}</h5>
                     <p className="card-text">
-                        <strong>Fecha de cultivo:</strong> {coffee.fecha_cultivo}<br />
-                        <strong>Notas:</strong> {coffee.notas}<br />
-                        <strong>Altura del cultivo:</strong> {coffee.altura} metros
+                        <strong><FormattedMessage id="CropDate" />:</strong> {coffee.fecha_cultivo}<br />
+                        <strong><FormattedMessage id="Notes" />:</strong> {coffee.notas}<br />
+                        <strong><FormattedMessage id="CropHeight" />:</strong> {coffee.altura} <FormattedMessage id="Meters" />
                     </p>
                 </div>
             </div>
